@@ -1,27 +1,24 @@
-# freepbx-missed-call-telegram-notifier
-
-A lightweight PHP script that monitors missed calls on a FreePBX system and sends notifications to specific Telegram chats based on call destination. FreePBX sisteminde belirli destinasyonlara gelen cevapsız çağrıları izleyen ve Telegram grubuna bildirim gönderen hafif bir PHP scripti.
-
 # FreePBX Missed Call Telegram Notifier
 
-This script monitors missed calls on a FreePBX system and sends notifications to a designated Telegram chat or group.
+This script monitors missed calls on a FreePBX system and sends Telegram notifications based on destination number (DID routing or extensions).
 
-## Features
+Features
 
-- Destination-based filtering
-- One-time notification per missed call
-- Works with FreePBX CDR table
-- Telegram group or direct chat support
-- Optional log rotation
+- Destination-based missed call filtering
+- Separate contact names per destination
+- One-time notification per call (log-based)
+- Telegram bot integration (group or individual)
+- Log rotation ready (sample config provided)
 
-## Requirements
+Requirements
 
-- PHP CLI
+- PHP CLI on your FreePBX server
 - Access to FreePBX's `asteriskcdrdb`
-- A Telegram bot and chat ID
+- A Telegram bot and chat/group ID
+- Cron access
 
-## Setup
+Installation
 
-1. Clone the repo
-2. Configure database and Telegram info in `missed_calls_to_telegram.php`
-3. Add cron job to run every 5 minutes:
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/ozererik/freepbx-missed-call-telegram-notifier.git
